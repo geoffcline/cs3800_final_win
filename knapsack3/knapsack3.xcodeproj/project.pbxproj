@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F41A8411C17CC9400EB59A3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F41A8401C17CC9400EB59A3 /* main.cpp */; };
+		8F41A8511C17CDC900EB59A3 /* bruteforce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F41A8471C17CDC900EB59A3 /* bruteforce.cpp */; };
+		8F41A8521C17CDC900EB59A3 /* Dynamic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F41A8491C17CDC900EB59A3 /* Dynamic.cpp */; };
+		8F41A8531C17CDC900EB59A3 /* Greedy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F41A84B1C17CDC900EB59A3 /* Greedy.cpp */; };
+		8F41A8541C17CDC900EB59A3 /* KnapSack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F41A84D1C17CDC900EB59A3 /* KnapSack.cpp */; };
+		8F41A8561C17CDC900EB59A3 /* tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F41A8501C17CDC900EB59A3 /* tester.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,15 @@
 
 /* Begin PBXFileReference section */
 		8F41A83D1C17CC9400EB59A3 /* knapsack3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = knapsack3; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F41A8401C17CC9400EB59A3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8F41A8471C17CDC900EB59A3 /* bruteforce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bruteforce.cpp; sourceTree = "<group>"; };
+		8F41A8481C17CDC900EB59A3 /* bruteforce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bruteforce.h; sourceTree = "<group>"; };
+		8F41A8491C17CDC900EB59A3 /* Dynamic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dynamic.cpp; sourceTree = "<group>"; };
+		8F41A84A1C17CDC900EB59A3 /* Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dynamic.h; sourceTree = "<group>"; };
+		8F41A84B1C17CDC900EB59A3 /* Greedy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Greedy.cpp; sourceTree = "<group>"; };
+		8F41A84C1C17CDC900EB59A3 /* Greedy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Greedy.h; sourceTree = "<group>"; };
+		8F41A84D1C17CDC900EB59A3 /* KnapSack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KnapSack.cpp; sourceTree = "<group>"; };
+		8F41A84E1C17CDC900EB59A3 /* KnapSack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnapSack.h; sourceTree = "<group>"; };
+		8F41A8501C17CDC900EB59A3 /* tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tester.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +69,15 @@
 		8F41A83F1C17CC9400EB59A3 /* knapsack3 */ = {
 			isa = PBXGroup;
 			children = (
-				8F41A8401C17CC9400EB59A3 /* main.cpp */,
+				8F41A8471C17CDC900EB59A3 /* bruteforce.cpp */,
+				8F41A8481C17CDC900EB59A3 /* bruteforce.h */,
+				8F41A8491C17CDC900EB59A3 /* Dynamic.cpp */,
+				8F41A84A1C17CDC900EB59A3 /* Dynamic.h */,
+				8F41A84B1C17CDC900EB59A3 /* Greedy.cpp */,
+				8F41A84C1C17CDC900EB59A3 /* Greedy.h */,
+				8F41A84D1C17CDC900EB59A3 /* KnapSack.cpp */,
+				8F41A84E1C17CDC900EB59A3 /* KnapSack.h */,
+				8F41A8501C17CDC900EB59A3 /* tester.cpp */,
 			);
 			path = knapsack3;
 			sourceTree = "<group>";
@@ -118,7 +138,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F41A8411C17CC9400EB59A3 /* main.cpp in Sources */,
+				8F41A8511C17CDC900EB59A3 /* bruteforce.cpp in Sources */,
+				8F41A8521C17CDC900EB59A3 /* Dynamic.cpp in Sources */,
+				8F41A8561C17CDC900EB59A3 /* tester.cpp in Sources */,
+				8F41A8541C17CDC900EB59A3 /* KnapSack.cpp in Sources */,
+				8F41A8531C17CDC900EB59A3 /* Greedy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
