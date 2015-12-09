@@ -64,7 +64,8 @@ public:
   friend void QuickSortP(KS_List& rhs);
   
   //allow manipulation of member KS_Items
-  KS_Item* operator [] (const int i) const {return Data[i];}
+  KS_Item* operator [] (const int i) const {return getitem(i);}
+  KS_Item* getitem(const int i) const {return (i < size ? Data[i] : 0);}
   
   KS_List(const KS_List &rhs) {*this = rhs;};
   

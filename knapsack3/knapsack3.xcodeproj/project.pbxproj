@@ -28,14 +28,14 @@
 
 /* Begin PBXFileReference section */
 		8F41A83D1C17CC9400EB59A3 /* knapsack3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = knapsack3; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F41A8471C17CDC900EB59A3 /* bruteforce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bruteforce.cpp; sourceTree = "<group>"; };
+		8F41A8471C17CDC900EB59A3 /* bruteforce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = bruteforce.cpp; sourceTree = "<group>"; tabWidth = 2; };
 		8F41A8481C17CDC900EB59A3 /* bruteforce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bruteforce.h; sourceTree = "<group>"; };
 		8F41A8491C17CDC900EB59A3 /* Dynamic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dynamic.cpp; sourceTree = "<group>"; };
 		8F41A84A1C17CDC900EB59A3 /* Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dynamic.h; sourceTree = "<group>"; };
 		8F41A84B1C17CDC900EB59A3 /* Greedy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Greedy.cpp; sourceTree = "<group>"; };
 		8F41A84C1C17CDC900EB59A3 /* Greedy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Greedy.h; sourceTree = "<group>"; };
 		8F41A84D1C17CDC900EB59A3 /* KnapSack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KnapSack.cpp; sourceTree = "<group>"; };
-		8F41A84E1C17CDC900EB59A3 /* KnapSack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnapSack.h; sourceTree = "<group>"; };
+		8F41A84E1C17CDC900EB59A3 /* KnapSack.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = KnapSack.h; sourceTree = "<group>"; tabWidth = 2; };
 		8F41A8501C17CDC900EB59A3 /* tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tester.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +108,9 @@
 		8F41A8351C17CC9400EB59A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Geoffrey;
 				TargetAttributes = {
@@ -185,6 +188,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/cellar/boost/1.59.0/include/;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -222,6 +226,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/cellar/boost/1.59.0/include/;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;

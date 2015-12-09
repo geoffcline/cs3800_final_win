@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "KnapSack.h"
+#include <thread>
 
 using namespace std;
 
