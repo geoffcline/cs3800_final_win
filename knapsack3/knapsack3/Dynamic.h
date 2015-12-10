@@ -7,6 +7,7 @@
 #define DYNAMIC_H
 
 #include "KnapSack.h"
+#include <thread>
 
 int DP_KNAPSACK(const KS_List& A, const int maxw);
 
