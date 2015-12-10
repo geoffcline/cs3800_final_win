@@ -8,7 +8,15 @@
 #include <stack>
 #include <atomic>
 
-void dynamiciter(const KS_List& A, const int maxw, const int i,atomic_int** sackValues);
+struct dynamicinp
+{
+	int i;
+	int maxw;
+	const KS_List* A;
+	atomic_int** sv;
+};
+
+void dynamiciter(dynamicinp* in1);
 
 int DP_KNAPSACK(const KS_List& A, const int maxw)
 {
@@ -20,6 +28,8 @@ int DP_KNAPSACK(const KS_List& A, const int maxw)
 	int final = 0;
     stack<thread*> tstack;
     thread *mythread;
+	dynamicinp* dinp;
+	dinp = new dynamicinp;
 	
 //Creates a 2D Dynamic Array to store the Values with sizeOfList and maxw
 	atomic_int **sackValues;
@@ -41,7 +51,12 @@ int DP_KNAPSACK(const KS_List& A, const int maxw)
 //Goes through the entire 2D array starting at row 1 to set the the max value
 	for (int i = 1; i <= sizeOfList; i++)
 	{
-        mythread = new thread(dynamiciter, maxw, i, sackValues);
+		dinp -> i = i;
+		dinp -> maxw = maxw;
+		dinp -> A = &A;
+		dinp -> sv = sackValues;
+		
+		mythread = new thread(dynamiciter, dinp);
         tstack.push(mythread);
 	}
     
@@ -65,12 +80,18 @@ int DP_KNAPSACK(const KS_List& A, const int maxw)
 
 }
 
-void dynamiciter(const KS_List& A, const int maxw, const int i,atomic_int** sackValues)
+void dynamiciter(dynamicinp* in1)
 {
-    for (int j = 0; j <= maxw; j++)
+	const int maxw = in1 -> maxw;
+	const int i = in1 -> i;
+	const KS_List* A = in1 -> A;
+	atomic_int** sackValues = in1 -> sv;
+	
+	
+	for (int j = 0; j <= maxw; j++)
     {
-        int currentW = A[i-1] -> getweight();
-        int currentV = A[i-1] -> getvalue();
+        int currentW = (*A)[i-1] -> getweight();
+        int currentV = (*A)[i-1] -> getvalue();
         
         if ( (currentW <= j) && ( (currentV + sackValues[j-currentW][i-1].load()) > sackValues[j][i-1].load() ))
         {

@@ -43,6 +43,7 @@ int bruteforceKS(const KS_List& item, const int maxw)
   {
     tstack.top() -> join();
     //cout << "thread joined" << tstack.top() -> get_id() << endl;
+    delete tstack.top();
     tstack.pop();
     
   }
