@@ -9,8 +9,8 @@ using namespace std;
 
 int main ()
 {
-  const int   DATAPOINTS=8;
-  const int   NUMPERPOINT=8;
+  const int   DATAPOINTS=4;
+  const int   NUMPERPOINT=4;
 
   const float SIGMA = 10;
   const float MU = 50;
@@ -23,7 +23,7 @@ int main ()
   
   const int   BRUTETHRESHOLD = 31;
   const int   BRUTEMAXW = 1000;
-  const int   BRUTEINITIALINPUTSIZE = 10;
+  const int   BRUTEINITIALINPUTSIZE = 8;
   const int   BRUTEINPUTINCREMENT = 2;
   const int   BRUTEMU = 10;
   const int   BRUTESIGMA = 2;
@@ -32,7 +32,7 @@ int main ()
   const int   BRUTEINITIALSIGMA = 1;
 
   
-  clock_t t;
+  time_t t,h;
   ofstream fout;
   
   int resultv;
@@ -62,9 +62,11 @@ int main ()
     if(BRUTEL_working.getsize() < BRUTETHRESHOLD)
     {  
       cout << "BRUTE TEST 1: \t" << i << endl;
-      t = clock();
+      time(&t);
       resultv = bruteforceKS(BRUTEL_working, BRUTEMAXW);
-      t = clock() - t;
+      time(&t);
+      time(&h);
+      t = t- h;
       fout << "\"BRUTE 1\",\"" << i << "\",\"" << t << "\",\"" << resultv << "\"" << endl;
       totalclockBrute+=t;
       totalresultBrute+=resultv;
@@ -77,7 +79,7 @@ int main ()
     }
 
     
-    if(i%NUMPERPOINT==0 && i!=0)
+    if((i+1)%NUMPERPOINT==0 && i!=0)
     {
       BRUTEL_working.generate(BRUTEL_working.getsize() + BRUTEINPUTINCREMENT);
   
@@ -107,9 +109,11 @@ int main ()
     //GREEDY APPROACH
     cout << "GREEDY TEST 1: \t" << i << endl;
     L_working.generate();
-    t = clock();
+    time(&t);
     resultv = GreedyKS(L_working, MAXW);
-    t = clock() - t;
+    
+    time(&h);
+    t = t- h;
     fout << "\"GREEDY 1\",\"" << i << "\",\"" << t << "\",\"" << resultv << "\",\"" << L_working.getweights() << "\"" << endl;
     
     totalclockGreedy+=t;
@@ -118,16 +122,17 @@ int main ()
     
     //DYNAMIC APPROACH
     cout << "DYNAMIC TEST 1: \t" << i << endl;
-    t = clock();
+    time(&t);
     resultv = DP_KNAPSACK(L_working, MAXW);
-    t = clock() - t;
+    time(&h);
+    t = t- h;
     fout << "\"DYNAMIC 1\",\"" << i << "\",\"" << t << "\",\"" << resultv << "\",\"" << L_working.getweights() << "\"" << endl;
     
     totalclockDynamic+=t;
     totalresultDynamic+=resultv;
 
     
-    if(i%NUMPERPOINT==0 && i!=0)
+    if((i+1)%NUMPERPOINT==0 && i!=0)
     {
       L_working.generate(L_working.getsize() + INPUTINCREMENT);
   
