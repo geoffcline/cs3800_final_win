@@ -17,8 +17,8 @@ int main ()
   const int   SIZE = 500;
   const int   MAXW = 5000;
   //const int   SIGMAINCREMENT = 2;
-  const int   INPUTINCREMENT = 100;
-  const int   INITIALINPUTSIZE = 100;
+  const int   INPUTINCREMENT = 1000;
+  const int   INITIALINPUTSIZE = 1000;
   //const int   INTIALSIGMA = 1;
   
   const int   BRUTETHRESHOLD = 31;
@@ -32,7 +32,7 @@ int main ()
   //const int   BRUTEINITIALSIGMA = 1;
 
   
-  clock_t t;
+    time_t t,h;
   ofstream fout;
   
   int resultv;
@@ -44,7 +44,7 @@ int main ()
   int totalclockBrute=0;
   int brutetooLarge=0;
   
-  fout.open("result2.csv");
+  fout.open("t_result5.csv");
   fout << "\"C/S\",\"" << CLOCKS_PER_SEC << "\"" << endl;
   
   KS_List BRUTEL_working(BRUTESIGMA, BRUTEMU, BRUTESIZE);
@@ -62,9 +62,10 @@ int main ()
     if(BRUTEL_working.getsize() < BRUTETHRESHOLD)
     {  
       cout << "BRUTE TEST 1: \t" << i << endl;
-      t = clock();
+      time(&t);
       resultv = bruteforceKS(BRUTEL_working, BRUTEMAXW);
-      t = clock() - t;
+      time(&h);
+      t = t -h;
       fout << "\"BRUTE 1\",\"" << i << "\",\"" << t << "\",\"" << resultv << "\"" << endl;
       totalclockBrute+=t;
       totalresultBrute+=resultv;
@@ -113,9 +114,11 @@ int main ()
     //GREEDY APPROACH
     cout << "GREEDY TEST 1: \t" << i << endl;
     L_working.generate();
-    t = clock();
+    time(&t);
     resultv = GreedyKS(L_working, MAXW);
-    t = clock() - t;
+      
+      time(&h);
+      t = t -h;
     fout << "\"GREEDY 1\",\"" << i << "\",\"" << t << "\",\"" << resultv << "\",\"" << L_working.getweights() << "\"" << endl;
     
     totalclockGreedy+=t;
@@ -124,9 +127,11 @@ int main ()
     
     //DYNAMIC APPROACH
     cout << "DYNAMIC TEST 1: \t" << i << endl;
-    t = clock();
+    time(&t);
     resultv = DP_KNAPSACK(L_working, MAXW);
-    t = clock() - t;
+      
+      time(&h);
+      t = t -h;
     fout << "\"DYNAMIC 1\",\"" << i << "\",\"" << t << "\",\"" << resultv << "\",\"" << L_working.getweights() << "\"" << endl;
     
     totalclockDynamic+=t;

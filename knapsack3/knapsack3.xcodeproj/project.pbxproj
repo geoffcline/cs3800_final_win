@@ -36,7 +36,7 @@
 		8F41A84C1C17CDC900EB59A3 /* Greedy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Greedy.h; sourceTree = "<group>"; };
 		8F41A84D1C17CDC900EB59A3 /* KnapSack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KnapSack.cpp; sourceTree = "<group>"; };
 		8F41A84E1C17CDC900EB59A3 /* KnapSack.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = KnapSack.h; sourceTree = "<group>"; tabWidth = 2; };
-		8F41A8501C17CDC900EB59A3 /* tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = tester.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		8F41A8501C17CDC900EB59A3 /* tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = tester.cpp; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
