@@ -48,6 +48,8 @@ int bruteforceKS(const KS_List& item, const int maxw)
     
   }
   
+  delete build1;
+  
   return bestValue; //returns max set
 
 }
@@ -93,7 +95,7 @@ void bruteiter(bruteinp* in1)
   }
   pthread_mutex_unlock( &checkmx );
   
-  delete A;
+  delete [] A;
   
   return;
 }

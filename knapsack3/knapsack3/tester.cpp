@@ -9,27 +9,27 @@ using namespace std;
 
 int main ()
 {
-  const int   DATAPOINTS=2;
-  const int   NUMPERPOINT=2;
+  const int   DATAPOINTS=4;
+  const int   NUMPERPOINT=4;
 
   const float SIGMA = 10;
   const float MU = 50;
   const int   SIZE = 500;
   const int   MAXW = 5000;
-  const int   SIGMAINCREMENT = 2;
+  //const int   SIGMAINCREMENT = 2;
   const int   INPUTINCREMENT = 100;
   const int   INITIALINPUTSIZE = 100;
-  const int   INTIALSIGMA = 1;
+  //const int   INTIALSIGMA = 1;
   
   const int   BRUTETHRESHOLD = 31;
   const int   BRUTEMAXW = 1000;
-  const int   BRUTEINITIALINPUTSIZE = 10;
+  const int   BRUTEINITIALINPUTSIZE = 8;
   const int   BRUTEINPUTINCREMENT = 2;
   const int   BRUTEMU = 10;
   const int   BRUTESIGMA = 2;
   const int   BRUTESIZE  = 20;
-  const int   BRUTESIGMAINCREMENT = 1;
-  const int   BRUTEINITIALSIGMA = 1;
+  //const int   BRUTESIGMAINCREMENT = 1;
+  //const int   BRUTEINITIALSIGMA = 1;
 
   
   clock_t t;
@@ -81,8 +81,12 @@ int main ()
     {
       BRUTEL_working.generate(BRUTEL_working.getsize() + BRUTEINPUTINCREMENT);
   
-      totalclockBrute   = totalclockBrute/(NUMPERPOINT- brutetooLarge);
-      totalresultBrute  = totalresultBrute/(NUMPERPOINT- brutetooLarge);
+      if(NUMPERPOINT - brutetooLarge != 0)
+      {
+        totalclockBrute   = totalclockBrute/(NUMPERPOINT- brutetooLarge);
+        totalresultBrute  = totalresultBrute/(NUMPERPOINT- brutetooLarge);
+      }
+    
 
 
       fout << "\"BRUTE DATA POINT 1\",\"" << i << "\",\"" << totalclockBrute << "\",\"" << totalresultBrute << "\"" << endl;

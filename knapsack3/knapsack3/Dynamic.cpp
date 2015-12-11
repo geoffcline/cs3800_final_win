@@ -22,8 +22,6 @@ int DP_KNAPSACK(const KS_List& A, const int maxw)
 {
 
 //Variable to be used later
-	int currentW = 0;
-	int currentV = 0;
 	int sizeOfList = A.getsize();
 	int final = 0;
     stack<thread*> tstack;
@@ -63,8 +61,12 @@ int DP_KNAPSACK(const KS_List& A, const int maxw)
     while(!tstack.empty())
     {
         tstack.top() -> join();
+		delete tstack.top();
+		
         tstack.pop();
     }
+	
+	delete dinp;
 	
   final = sackValues[maxw][sizeOfList];
   
