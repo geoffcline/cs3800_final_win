@@ -44,7 +44,7 @@ int main ()
   int totalclockBrute=0;
   int brutetooLarge=0;
   
-  fout.open("~/result.csv");
+  fout.open("result2.csv");
   fout << "\"C/S\",\"" << CLOCKS_PER_SEC << "\"" << endl;
   
   KS_List BRUTEL_working(BRUTESIGMA, BRUTEMU, BRUTESIZE);
@@ -77,7 +77,7 @@ int main ()
     }
 
     
-    if(i%NUMPERPOINT==0 && i!=0)
+    if(((i+1) % NUMPERPOINT) == 0 && i!=0)
     {
       BRUTEL_working.generate(BRUTEL_working.getsize() + BRUTEINPUTINCREMENT);
   
@@ -89,7 +89,8 @@ int main ()
     
 
 
-      fout << "\"BRUTE DATA POINT 1\",\"" << i << "\",\"" << totalclockBrute << "\",\"" << totalresultBrute << "\"" << endl;
+        cout << "Brute Data Point" << endl;
+        fout << "\"BRUTE DATA POINT 1\",\"" << i << "\",\"" << totalclockBrute << "\",\"" << totalresultBrute << "\"" << endl;
  
 
       totalclockBrute   = 0;
@@ -132,7 +133,7 @@ int main ()
     totalresultDynamic+=resultv;
 
     
-    if(i%NUMPERPOINT==0 && i!=0)
+    if((i+1)%NUMPERPOINT==0 && i!=0)
     {
       L_working.generate(L_working.getsize() + INPUTINCREMENT);
   
