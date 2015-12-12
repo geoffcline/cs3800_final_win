@@ -11,15 +11,15 @@ int main ()
 {
   const int   DATAPOINTS=4;
   const int   NUMPERPOINT=4;
-
+  
   const float SIGMA = 10;
   const float MU = 50;
   const int   SIZE = 500;
   const int   MAXW = 5000;
-  const int   SIGMAINCREMENT = 2;
-  const int   INPUTINCREMENT = 100;
-  const int   INITIALINPUTSIZE = 100;
-  const int   INTIALSIGMA = 1;
+  //const int   SIGMAINCREMENT = 2;
+  const int   INPUTINCREMENT = 1000;
+  const int   INITIALINPUTSIZE = 1000;
+  //const int   INTIALSIGMA = 1;
   
   const int   BRUTETHRESHOLD = 31;
   const int   BRUTEMAXW = 1000;
@@ -28,8 +28,8 @@ int main ()
   const int   BRUTEMU = 10;
   const int   BRUTESIGMA = 2;
   const int   BRUTESIZE  = 20;
-  const int   BRUTESIGMAINCREMENT = 1;
-  const int   BRUTEINITIALSIGMA = 1;
+  //const int   BRUTESIGMAINCREMENT = 1;
+  //const int   BRUTEINITIALSIGMA = 1;
 
   
   time_t t,h;
@@ -44,7 +44,7 @@ int main ()
   int totalclockBrute=0;
   int brutetooLarge=0;
   
-  fout.open("result.csv");
+  fout.open("s_result5.csv");
   fout << "\"C/S\",\"" << CLOCKS_PER_SEC << "\"" << endl;
   
   KS_List BRUTEL_working(BRUTESIGMA, BRUTEMU, BRUTESIZE);
